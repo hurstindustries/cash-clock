@@ -7,13 +7,14 @@ let interval;
 
 export default new Vuex.Store({
   state: {
-    hourlyRate: 50.0,
+    hourlyRate: 0,
     hoursPerDay: 8,
     clockRunning: false,
     elapsedTime: 0,
   },
   getters: {
     hourlyRate: state => state.hourlyRate,
+    hoursPerDay: state => state.hoursPerDay,
   },
   mutations: {
     SET_HOURLY_RATE: (state, payload) => {

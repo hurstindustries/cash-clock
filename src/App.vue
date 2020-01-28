@@ -4,7 +4,8 @@
     <Bank  class="m-12" :money="earnedWage" :hourlyRate="hourlyRate"></Bank>
     <Clock class="m-12" :time="elapsedTime"></Clock>
     <Controls ></Controls>
-   
+    <RateForm v-if="!hourlyRate"></RateForm>
+    <HourlyDisplay v-else></HourlyDisplay>
   </div>
 </template>
 
@@ -14,11 +15,13 @@ import { mapGetters } from 'vuex';
 import Bank from "./components/Bank.vue";
 import Clock from "./components/Clock.vue";
 import Controls from "./components/Controls.vue";
+import RateForm from "./components/RateForm.vue";
+import HourlyDisplay from "./components/HourlyDisplay.vue";
 
 export default {
   name: 'app', 
   computed: {
-    ...mapGetters(['hourlyRate']),
+    ...mapGetters(['hourlyRate', 'hoursPerDay']),
     elapsedTime () {
       return this.$store.state.elapsedTime
     },
@@ -34,7 +37,9 @@ export default {
   components: {
     Clock,
     Bank,
-    Controls    
+    Controls,
+    RateForm,
+    HourlyDisplay
   }
 };
 </script>
