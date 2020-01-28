@@ -4,7 +4,7 @@
       ${{ money }}
     </div>
     <div class="text-gray-500">
-      Today's Wage (@ ${{ hourlyRate}})
+      Today's Wage (@ ${{ hourlyRate}} /hr)
     </div>
   </div>
 </template>
